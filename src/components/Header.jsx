@@ -13,7 +13,7 @@ function Header() {
                 <Link className="link" to="/">
                     <h3 className="header__menu-item">
                         <i className="ri-archive-2-line"></i>
-                        <span>Products</span>
+                        <span>Shop</span>
                     </h3>
                 </Link>
 

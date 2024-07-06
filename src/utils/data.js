@@ -948,20 +948,20 @@ const imageUrl = [
     "https://www.gadgettree.co.uk/wp-content/uploads/2021/09/hx-product-keyboard-alloy-core-rgb-hxkb5me2es-1-zm-lg.jpg"
 ]
 
-for(let i = 0; i < imageUrl.length; i++) {
-    data[i].images = imageUrl[i];
-}
+// for(let i = 0; i < imageUrl.length; i++) {
+//     data[i].images = imageUrl[i];
+// }
+
+let products = data.map(product => {
+    return {
+        ...product,
+        inCart: false,
+        quantity: 0
+    };
+});
 
 function getProducts() {
-    const products = data.map(product => {
-        return {
-            ...product,
-            inCart: false,
-            quantity: 0
-        };
-    });
-
     return products;
 }
 
-export default getProducts;
+export { getProducts };
