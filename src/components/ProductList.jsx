@@ -7,7 +7,10 @@ function ProductList({ shop, products }) {
 
     return (
         <div className="shop">
-            <h3 className="shop__title">{shop}</h3>
+            <div className="shop__title">
+                <i className="ri-store-3-line"></i>
+                <span>{shop}</span>
+            </div>
             <div className="product-card-list">
                 {
                     shopProducts.map(product => {

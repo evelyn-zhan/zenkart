@@ -24,8 +24,6 @@ function HomePage() {
         }
     }
 
-    console.log(shops)
-
     return (
         <div className="home">
             <div className="banner">
