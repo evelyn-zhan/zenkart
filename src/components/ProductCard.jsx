@@ -9,17 +9,16 @@ function ProductCard({ price, title, description, images, discount_percentage, i
                     <span className="product-card__title">{title}</span>
                     <span className="product-card__description">{description}</span>
                 </div>
-                {
-                    discount_percentage > 0
-                        ?
-                            <span className="product-card__price">
-                                <b>$ {price}</b>
-                            </span>
-                        :
-                            <span className="product-card__price">
-                                <b><s>$ {price}</s></b>
-                            </span>
-                }
+                <div className="product-card__price">
+                    <i class="ri-price-tag-3-line"></i>
+                    <span className="product-card__price-amount">$ {Math.round((100 - discount_percentage) * price) / 100}</span>
+                    {
+                        discount_percentage > 0 && 
+                        <span className="product-card__price-before-discount">
+                            <small><s>$ {price}</s></small>
+                        </span>
+                    }
+                </div>
             </div>
             
         </div>

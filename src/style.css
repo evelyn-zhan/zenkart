@@ -125,7 +125,7 @@
 }
 
 .product-card {
-    padding: 15px 15px 20px 15px;
+    padding: 15px 15px 25px 15px;
     width: 230px;
 
     display: flex;
@@ -163,4 +163,30 @@
 
 .product-card__description {
     font-size: .95rem;
+}
+
+.product-card__price {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.product-card__price i {
+    font-size: 1.3rem;
+}
+
+.product-card__price-amount {
+    padding: 3px 8px;
+
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    background-color: var(--primary-color);
+    border: transparent;
+    border-radius: 5px;
+}
+
+.product-card__price-before-discount {
+    font-weight: 700;
+    color: var(--primary-color);
 }
