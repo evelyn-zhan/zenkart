@@ -2,7 +2,7 @@ import React from 'react';
 
 import ProductCard from './ProductCard';
 
-function ProductList({ shop, products }) {
+function ProductList({ shop, products, onAddToCart}) {
     const shopProducts = products.filter(product => product.shop.name === shop);
 
     return (
@@ -14,7 +14,7 @@ function ProductList({ shop, products }) {
             <div className="product-card-list">
                 {
                     shopProducts.map(product => {
-                        return <ProductCard key={product.id} {...product} />
+                        return <ProductCard key={product.id} {...product} onAddToCart={onAddToCart} />
                     })
                 }
             </div>

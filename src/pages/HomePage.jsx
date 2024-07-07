@@ -24,6 +24,20 @@ function HomePage() {
         }
     }
 
+    function onAddToCartHandler(id) {
+        const updatedProducts = products.map(product => {
+            if(product.id === id) {
+                return {
+                    ...product,
+                    inCart: true
+                }
+            }
+            return product;
+        });
+        
+        setProducts(updatedProducts);
+    }
+
     return (
         <div className="home">
             <div className="banner">
@@ -37,7 +51,7 @@ function HomePage() {
                 <h2 className="product-list__title">Shops and Products</h2>
                 {
                     shops.map(shop => {
-                        return <ProductList key={shop} shop={shop} products={products} />
+                        return <ProductList key={shop} shop={shop} products={products} onAddToCart={onAddToCartHandler} />
                     })
                 }
             </div>
