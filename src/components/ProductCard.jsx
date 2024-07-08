@@ -1,12 +1,23 @@
 import React from 'react';
 
-function ProductCard({ id, price, title, description, images, discount_percentage, inCart, onAddToCart }) {
+function ProductCard({ id, price, title, description, images, discount_percentage, inCart, liked, onLike, onAddToCart }) {
     const onAddToCartHandler = () => {
         onAddToCart(id);
-    }
+    };
+
+    const onLikeHandler = () => {
+        onLike(id);
+    };
 
     return (
         <div className="product-card">
+            <div className="product-card__like">
+                {
+                    liked
+                    ? <i className="ri-heart-3-fill" style={{ color: 'red' }} onClick={onLikeHandler}></i>
+                    : <i className="ri-heart-3-line" onClick={onLikeHandler}></i>
+                }
+            </div>
             <img src={images[1]} alt="product image" className="product-card__image" />
             <div className="product-card__text">
                 <div className="product-card__info">

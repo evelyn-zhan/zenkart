@@ -956,7 +956,8 @@ let products = data.map(product => {
     return {
         ...product,
         inCart: false,
-        quantity: 0
+        quantity: 0,
+        liked: false
     };
 });
 
