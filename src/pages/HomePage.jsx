@@ -1,57 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { getProducts } from '../utils/data';
 import ProductList from '../components/ProductList';
 
-function HomePage() {
-    const [ products, setProducts ] = useState(() => {
-        const savedProducts = localStorage.getItem('products');
-        if(savedProducts){
-            return JSON.parse(savedProducts);
-        }
-        return getProducts();
-    });
-
-    useEffect(() => {
-        localStorage.setItem('products', JSON.stringify(products));
-    });
-
-    let shops = [];
-    
-    for(let i = 0; i < products.length; i++) {
-        if(!shops.includes(products[i].shop.name)) {
-            shops.push(products[i].shop.name);
-        }
-    }
-
-    function onAddToCartHandler(id) {
-        const updatedProducts = products.map(product => {
-            if(product.id === id) {
-                return {
-                    ...product,
-                    inCart: true
-                }
-            }
-            return product;
-        });
-        
-        setProducts(updatedProducts);
-    }
-
-    function onLikeHandler(id) {
-        const updatedProducts = products.map(product => {
-            if(product.id === id) {
-                return {
-                    ...product,
-                    liked: !product.liked
-                }
-            }
-            return product;
-        });
-
-        setProducts(updatedProducts);
-    }
-    
+function HomePage({ shops, products, onLike, onAddToCart }) {
     return (
         <div className="home">
             <div className="banner">
@@ -65,7 +16,7 @@ function HomePage() {
                 <h2 className="product-list__title">Shops and Products</h2>
                 {
                     shops.map(shop => {
-                        return <ProductList key={shop} shop={shop} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />
+                        return <ProductList key={shop} shop={shop} products={products} onLike={onLike} onAddToCart={onAddToCart} />
                     })
                 }
             </div>
