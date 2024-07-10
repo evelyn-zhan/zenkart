@@ -551,4 +551,10 @@
     border-radius: 3px;
 
     cursor: pointer;
+
+    transition: .3s;
+}
+
+.cart__product-add-qty:hover, .cart__product-subtract-qty:hover {
+    background-color: var(--darker-color);
 }
