@@ -32,7 +32,8 @@ function App() {
             if(product.id === id) {
                 return {
                     ...product,
-                    inCart: true
+                    inCart: true,
+                    quantity: product.quantity + 1
                 }
             }
             return product;
@@ -55,15 +56,86 @@ function App() {
         setProducts(updatedProducts);
     }
 
+    function onDeleteShopHandler(shop) {
+        const updatedProducts = products.map(product => {
+            if(product.shop.name === shop) {
+                return {
+                    ...product,
+                    inCart: false,
+                    quantity: 0
+                }
+            }
+            return product;
+        })
+
+        setProducts(updatedProducts);
+    }
+
+    function onDeleteAllHandler() {
+        const updatedProducts = products.map(product => {
+            if(product.inCart) {
+                return {
+                    ...product,
+                    inCart: false,
+                    quantity: 0
+                }
+            }
+            return product;
+        });
+
+        setProducts(updatedProducts);
+    }
+
+    function onCheckHandler(id) {
+        const updatedProducts = products.map(product => {
+            if(product.id === id) {
+                return {
+                    ...product,
+                    checked: !product.checked
+                }
+            }
+            return product;
+        });
+
+        setProducts(updatedProducts);
+    }
+
+    function onCheckShopHandler(shop, value) {
+        const updatedProducts = products.map(product => {
+            if(product.shop.name === shop && product.inCart) {
+                return {
+                    ...product,
+                    checked: value
+                }
+            }
+            return product;
+        });
+
+        setProducts(updatedProducts);
+    }
+
+    function onCheckAllHandler(value) {
+        const updatedProducts = products.map(product => {
+            if(product.inCart) {
+                return {
+                    ...product,
+                    checked: value
+                }
+            }
+            return product;
+        });
+
+        setProducts(updatedProducts);
+    }
+
     const cartProducts = products.filter(product => product.inCart);
 
     return (
         <>
             <Header />
-
             <Routes>
                 <Route path="/" element={<HomePage shops={shops} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />} />
-                <Route path="/cart" element={<CartPage cartProducts={cartProducts} />} />
+                <Route path="/cart" element={<CartPage shops={shops} cartProducts={cartProducts} onDeleteShop={onDeleteShopHandler} onDeleteAll={onDeleteAllHandler} onCheck={onCheckHandler} onCheckShop={onCheckShopHandler} onCheckAll={onCheckAllHandler} />} />
             </Routes>
         </>
     );

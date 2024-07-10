@@ -5,7 +5,7 @@
     --primary-color: #277ca5;
     --secondary-color: #64c2ec;
     --lighter-color: #b8f5ff;
-    --grey: #a9a9a9;
+    --grey: #666666;
 }
 
 * {
@@ -104,7 +104,7 @@
 .shop__title {
     display: flex;
     align-items: center;
-    gap: .6rem;
+    gap: .5rem;
 
     font-size: 1.4rem;
     font-weight: 700;
@@ -234,11 +234,7 @@
 }
 
 .cart {
-    padding: 2rem 4rem;
-
-    /* display: flex;
-    flex-flow: column nowrap;
-    gap: 1.5rem; */
+    padding: 2rem 4rem 3rem 4rem;
 }
 
 .cart__title {
@@ -247,23 +243,6 @@
     gap: 1rem;
 
     font-size: 1.7rem;
-}
-
-.cart__back {
-    display: flex;
-    align-items: center;
-    gap: .3rem;
-
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-
-    transition: .3s;
-}
-
-.cart__back:hover {
-    transform: translateX(-1.5rem);
 }
 
 .cart__empty {
@@ -310,4 +289,212 @@
 
 .cart__empty-button:hover {
     box-shadow: 4px 4px 0px 1px var(--darker-color)
+}
+
+.cart__shop-back {
+    margin-top: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+
+    transition: .3s;
+}
+
+.cart__shop-back:hover {
+    transform: translateX(-1.5rem);
+}
+
+.cart__container {
+    margin-top: 1.5rem;
+
+    display: flex;
+    gap: 2.5rem;
+}
+
+.cart__shop-list {
+    width: 70%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+
+.cart__shop-list-total {
+    width: 100%;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    font-size: .98rem;
+    font-weight: 800;
+    border: transparent;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cart__shop-list-total-checkbox {
+    accent-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.cart__shop-list-qty-n-delete {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart__shop-list-delete {
+    font-size: .95rem;
+    color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+.cart__checkout {
+    width: 30%;
+    height: max-content;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    border: transparent;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cart__checkout-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.cart__checkout-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.05rem;
+}
+
+.cart__checkout-button {
+    width: 100%;
+    padding: .8rem 1.5rem;
+
+    font-size: .98rem;
+    font-weight: 700;
+    color: white;
+    background-color: var(--primary-color);
+    border: transparent;
+    border-radius: .5rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cart__checkout-button:hover {
+    background-color: var(--darker-color);
+}
+
+.cart__shop {
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    border: transparent;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cart__shop-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart__shop-header input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.cart__shop-title-n-delete {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart__shop-header-title {    
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cart__shop-header-title i {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.cart__shop-delete {
+    font-size: .95rem;
+    font-weight: 800;
+    color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+.cart__shop-product {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.cart__shop-product input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.cart__product-image {
+    width: 100px;
+    height: 100px;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.cart__product-info {
+    display: flex;
+    flex-flow: column;
+    gap: .3rem;
+}
+
+.cart__product-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.cart__product-description {
+    font-size: .9rem;
+}
+
+.cart__product-note {
+    font-size: .85rem;
+    color: var(--grey);
 }
