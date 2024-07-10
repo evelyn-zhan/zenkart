@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import EmptyCart from '../components/EmptyCart';
 import CartShopList from '../components/CartShopList';
 
-function CartPage({ shops, cartProducts, onDeleteShop, onDeleteAll, onCheck, onCheckShop, onCheckAll }) {
+function CartPage({ shops, cartProducts, onDelete, onDeleteShop, onDeleteAll, onCheck, onCheckShop, onCheckAll, onAddQuantity, onSubtractQuantity }) {
     let checkoutAmount = 0;
 
     for(let i = 0; i < cartProducts.length; i++) {
@@ -35,7 +35,7 @@ function CartPage({ shops, cartProducts, onDeleteShop, onDeleteAll, onCheck, onC
                     ? <EmptyCart />
                     :
                     <div className="cart__container">
-                        <CartShopList shops={shops} products={cartProducts} onDeleteShop={onDeleteShop} onDeleteAll={onDeleteAll} onCheck={onCheck} onCheckShop={onCheckShop} onCheckAll={onCheckAll} />
+                        <CartShopList shops={shops} products={cartProducts} onDelete={onDelete} onDeleteShop={onDeleteShop} onDeleteAll={onDeleteAll} onCheck={onCheck} onCheckShop={onCheckShop} onCheckAll={onCheckAll} onAddQuantity={onAddQuantity} onSubtractQuantity={onSubtractQuantity} />
                         <div className="cart__checkout">
                             <span className="cart__checkout-title">Cart Summary</span>
                             <div className="cart__checkout-amount">
