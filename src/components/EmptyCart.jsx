@@ -8,7 +8,7 @@ function EmptyCart() {
             <span className="cart__empty-text">There is nothing in your cart...</span>
             <Link to="/" className="cart__empty-button">
                 <i className="ri-shopping-bag-4-fill"></i>
-                Shop Now
+                <span>Shop Now</span>
             </Link>
        </div>
     )
