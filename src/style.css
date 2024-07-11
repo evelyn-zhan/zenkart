@@ -620,13 +620,15 @@
 }
 
 .cart__product-add-note-input-n-limit {
+    width: 100%;
+
     display: flex;
     flex-flow: column nowrap;
     gap: .2rem;
 }
 
 .cart__product-add-note-input {
-    width: 650px;
+    width: 100%;
     height: 30px;
     padding: 2px 5px;
 
