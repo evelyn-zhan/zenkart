@@ -25,6 +25,7 @@ function AddNote({ id, note, trigger, setTrigger, onAddNote }) {
                     <input
                         type="text" name="add-note" id={`add-note-${id}`}
                         className="cart__product-add-note-input"
+                        autoComplete='off'
                         value={noteValue} onChange={(event) => { noteValue.length < noteLimit && setNoteValue(event.target.value); }}
                     />
                     <span className="cart__product-add-note-limit">{noteLimit - noteValue.length} characters left</span>
