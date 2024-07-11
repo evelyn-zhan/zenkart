@@ -2,7 +2,7 @@ import React from 'react';
 
 import CartShop from './CartShop';
 
-function CartShopList({ shops, products, onDelete, onDeleteShop, onDeleteAll, onCheck, onCheckShop, onCheckAll, onAddQuantity, onSubtractQuantity }) {
+function CartShopList({ shops, products, onDelete, onDeleteShop, onDeleteAll, onCheck, onCheckShop, onCheckAll, onAddQuantity, onSubtractQuantity, onAddNote }) {
     const onCheckAllHandler = () => {
         onCheckAll(!products.every(product => product.checked));
     }
@@ -26,7 +26,7 @@ function CartShopList({ shops, products, onDelete, onDeleteShop, onDeleteAll, on
             </div>
             {
                 shops.map(shop => {
-                    return <CartShop key={shop} shop={shop} products={products.filter(product => product.shop.name === shop)} onDelete={onDelete} onDeleteShop={onDeleteShop} onDeleteAll={onDeleteAll} onCheck={onCheck} onCheckShop={onCheckShop} onAddQuantity={onAddQuantity} onSubtractQuantity={onSubtractQuantity} />
+                    return <CartShop key={shop} shop={shop} products={products.filter(product => product.shop.name === shop)} onDelete={onDelete} onDeleteShop={onDeleteShop} onDeleteAll={onDeleteAll} onCheck={onCheck} onCheckShop={onCheckShop} onAddQuantity={onAddQuantity} onSubtractQuantity={onSubtractQuantity} onAddNote={onAddNote} />
                 })
             }
         </div>

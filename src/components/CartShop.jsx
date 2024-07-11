@@ -2,7 +2,7 @@ import React from 'react';
 
 import CartProduct from './CartProduct';
 
-function CartShop({ shop, products, onDelete, onDeleteShop, onCheck, onCheckShop, onAddQuantity, onSubtractQuantity }) {
+function CartShop({ shop, products, onDelete, onDeleteShop, onCheck, onCheckShop, onAddQuantity, onSubtractQuantity, onAddNote }) {
     if(products.length === 0) return;
 
     const onDeleteShopHandler = () => {
@@ -32,7 +32,7 @@ function CartShop({ shop, products, onDelete, onDeleteShop, onCheck, onCheckShop
             </div>
             {
                 products.map(product => {
-                    return <CartProduct key={product.id} {...product} onDelete={onDelete} onCheck={onCheck} onAddQuantity={onAddQuantity} onSubtractQuantity={onSubtractQuantity} />
+                    return <CartProduct key={product.id} {...product} onDelete={onDelete} onCheck={onCheck} onAddQuantity={onAddQuantity} onSubtractQuantity={onSubtractQuantity} onAddNote={onAddNote} />
                 })
             }
         </div>

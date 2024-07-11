@@ -62,7 +62,8 @@ function App() {
                 return {
                     ...product,
                     inCart: false,
-                    quantity: 0
+                    quantity: 0,
+                    note: ''
                 }
             }
             return product;
@@ -77,7 +78,8 @@ function App() {
                 return {
                     ...product,
                     inCart: false,
-                    quantity: 0
+                    quantity: 0,
+                    note: ''
                 }
             }
             return product;
@@ -92,7 +94,8 @@ function App() {
                 return {
                     ...product,
                     inCart: false,
-                    quantity: 0
+                    quantity: 0,
+                    note: ''
                 }
             }
             return product;
@@ -171,6 +174,20 @@ function App() {
         setProducts(updatedProducts);
     }
 
+    function onAddNoteHandler(id, note) {
+        const updatedProducts = products.map(product => {
+            if(product.id === id) {
+                return {
+                    ...product,
+                    note: note
+                }
+            }
+            return product;
+        });
+
+        setProducts(updatedProducts);
+    }
+
     const cartProducts = products.filter(product => product.inCart);
 
     return (
@@ -179,7 +196,7 @@ function App() {
             <Routes>
                 <Route path="*" element={<HomePage shops={shops} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />} />
                 <Route path="/" element={<HomePage shops={shops} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />} />
-                <Route path="/cart" element={<CartPage shops={shops} cartProducts={cartProducts} onDelete={onDeleteHandler} onDeleteShop={onDeleteShopHandler} onDeleteAll={onDeleteAllHandler} onCheck={onCheckHandler} onCheckShop={onCheckShopHandler} onCheckAll={onCheckAllHandler} onAddQuantity={onAddQuantityHandler} onSubtractQuantity={onSubtractQuantityHandler} />} />
+                <Route path="/cart" element={<CartPage shops={shops} cartProducts={cartProducts} onDelete={onDeleteHandler} onDeleteShop={onDeleteShopHandler} onDeleteAll={onDeleteAllHandler} onCheck={onCheckHandler} onCheckShop={onCheckShopHandler} onCheckAll={onCheckAllHandler} onAddQuantity={onAddQuantityHandler} onSubtractQuantity={onSubtractQuantityHandler} onAddNote={onAddNoteHandler} />} />
             </Routes>
         </>
     );

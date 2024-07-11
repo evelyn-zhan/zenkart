@@ -942,7 +942,7 @@ let products = data.map(product => {
         quantity: 0,
         liked: false,
         checked: false,
-        note: '-'
+        note: ''
     };
 });
 
