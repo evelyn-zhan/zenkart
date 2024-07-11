@@ -631,7 +631,7 @@
     outline-width: 1px;
 }
 
-.cart__product-add-note-submit {
+.cart__product-add-note-submit, .cart__product-add-note-cancel {
     padding: 6px 10px;
 
     font-size: .85rem;
@@ -646,6 +646,6 @@
     transition: .3s;
 }
 
-.cart__product-add-note-submit:hover {
+.cart__product-add-note-submit:hover, .cart__product-add-note-cancel:hover {
     background-color: var(--darker-color);
 }

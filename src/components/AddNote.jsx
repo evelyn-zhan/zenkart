@@ -20,7 +20,8 @@ function AddNote({ id, note, trigger, setTrigger, onAddNote }) {
                     className="cart__product-add-note-input"
                     value={noteValue} onChange={(event) => { setNoteValue(event.target.value); }}
                 />
-                <button className="cart__product-add-note-submit">Confirm</button>
+                <button type="submit" className="cart__product-add-note-submit">Confirm</button>
+                <button className="cart__product-add-note-cancel" onClick={() => setTrigger(false)}>Cancel</button>
             </form>
         </div>
     );
