@@ -10,13 +10,6 @@ function Header() {
             </div>
 
             <div className="header__menu">
-                <Link className="link" to="/">
-                    <h3 className="header__menu-item">
-                        <i className="ri-archive-2-line"></i>
-                        <span>Shop</span>
-                    </h3>
-                </Link>
-
                 <Link className="link" to="/cart">
                     <h3 className="header__menu-item">
                         <i className="ri-shopping-cart-2-line"></i>

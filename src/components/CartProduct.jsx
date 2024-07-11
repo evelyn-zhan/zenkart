@@ -32,7 +32,11 @@ function CartProduct({ id, price, title, description, images, discount_percentag
                     </div>
                     <div className="cart__product-qty-n-buttons">
                         <div className="cart__product-buttons">
-                            <i className="ri-sticky-note-add-line" onClick={() => setNoteArea(true)}></i>
+                            {
+                                note === ''
+                                ? <i className="ri-sticky-note-add-line" onClick={() => setNoteArea(true)}></i>
+                                : <i class="ri-edit-2-line" onClick={() => setNoteArea(true)}></i>
+                            }
                             <i className="ri-delete-bin-6-line" onClick={onDeleteHandler}></i>
                         </div>
                         <div className="cart__product-qty">
