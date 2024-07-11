@@ -610,12 +610,19 @@
 
 .cart__product-add-note-text {
     font-size: .95rem;
+    font-weight: 700;
 }
 
 .cart__product-add-note-form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: .5rem;
+}
+
+.cart__product-add-note-input-n-limit {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .2rem;
 }
 
 .cart__product-add-note-input {
@@ -623,12 +630,17 @@
     height: 30px;
     padding: 2px 5px;
 
-    font-size: .8rem;
+    font-size: .88rem;
 }
 
 .cart__product-add-note-input:focus {
     outline-color: var(--primary-color);
     outline-width: 1px;
+}
+
+.cart__product-add-note-limit {
+    font-size: .85rem;
+    font-weight: 600;
 }
 
 .cart__product-add-note-submit, .cart__product-add-note-cancel {
