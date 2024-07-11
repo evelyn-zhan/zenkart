@@ -18,7 +18,7 @@ function ProductCard({ id, price, title, description, images, discount_percentag
                     : <i className="ri-heart-3-line" onClick={onLikeHandler}></i>
                 }
             </div>
-            <img src={images[1]} alt="product image" className="product-card__image" />
+            <img src={images} alt="product image" className="product-card__image" />
             <div className="product-card__text">
                 <div className="product-card__info">
                     <span className="product-card__title">{title}</span>

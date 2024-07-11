@@ -177,6 +177,7 @@ function App() {
         <>
             <Header />
             <Routes>
+                <Route path="*" element={<HomePage shops={shops} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />} />
                 <Route path="/" element={<HomePage shops={shops} products={products} onLike={onLikeHandler} onAddToCart={onAddToCartHandler} />} />
                 <Route path="/cart" element={<CartPage shops={shops} cartProducts={cartProducts} onDelete={onDeleteHandler} onDeleteShop={onDeleteShopHandler} onDeleteAll={onDeleteAllHandler} onCheck={onCheckHandler} onCheckShop={onCheckShopHandler} onCheckAll={onCheckAllHandler} onAddQuantity={onAddQuantityHandler} onSubtractQuantity={onSubtractQuantityHandler} />} />
             </Routes>

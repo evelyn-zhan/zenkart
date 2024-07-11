@@ -931,26 +931,9 @@ const data = [
     }
 ]
 
-const imageUrl = [
-    "https://m.media-amazon.com/images/I/61NjDC5FiPL._AC_UF1000,1000_QL80_.jpg",
-    "https://images-cdn.ubuy.co.id/644673783d89926a4b7a95d4-viglt-laptop-stand-for-desk-adjustable.jpg",
-    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HQZQ2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1693504246821",
-    "https://i5.walmartimages.com/seo/YISOHO0-32TB-High-Speed-SSD-Portable-Data-Storage-Hard-Drive-Type-C-USB-3-0_77b9c47b-8832-4b1c-b190-a3544a99763a.81cbaa001682685e52bd6487136a7d2b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-    "https://media.croma.com/image/upload/v1672392906/Croma%20Assets/Imaging/Camera%20Accessories/Images/262841_0_l6uwxw.png",
-    "https://main.mobile.doss.co.id/storage/uploads/2023/03/medium/sony-wh-ch720n-wireless-over-ear-noise-canceling-headphones-black.webp",
-    "https://m.media-amazon.com/images/I/61na1lk6ZGL.jpg",
-    "https://laptopwithlinux.com/wp-content/uploads/Webcam-Cover-laptop.png",
-    "https://static.wixstatic.com/media/8517ed_fd3be655db9643d89289d29e3f360238~mv2.png/v1/fill/w_596,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Phantom87_02%20-%201.png",
-    "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08255450.png",
-    "https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/ergo-k860-business/gallery/ergo-k860-for-business-gallery-1-us-new.png?v=1",
-    "https://resource.logitech.com/w_800,c_lpad,ar_16:9,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-keyboard-top-view-graphite-us.png?v=1",
-    "https://resource.logitech.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-us.png?v=1",
-    "https://www.gadgettree.co.uk/wp-content/uploads/2021/09/hx-product-keyboard-alloy-core-rgb-hxkb5me2es-1-zm-lg.jpg"
-]
-
-// for(let i = 0; i < imageUrl.length; i++) {
-//     data[i].images = imageUrl[i];
-// }
+for(let i = 0; i < data.length; i++) {
+    data[i].images = `/images/${i + 1}.png`;
+}
 
 let products = data.map(product => {
     return {
@@ -959,7 +942,7 @@ let products = data.map(product => {
         quantity: 0,
         liked: false,
         checked: false,
-        note: ''
+        note: '-'
     };
 });
 
