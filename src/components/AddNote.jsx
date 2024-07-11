@@ -5,10 +5,6 @@ function AddNote({ id, note, trigger, setTrigger, onAddNote }) {
 
     const noteLimit = 50;
 
-    if(noteLimit - noteValue.length <= 10) {
-        document.querySelector('.cart__product-add-note-limit').style.color = 'red';
-    }
-
     const onAddNoteHandler = (event) => {
         event.preventDefault();
         onAddNote(id, noteValue);
@@ -16,6 +12,10 @@ function AddNote({ id, note, trigger, setTrigger, onAddNote }) {
     };
 
     if(trigger === false) return;
+
+    if(noteLimit - noteValue.length <= 10) {
+        document.querySelector('.cart__product-add-note-limit').style.color = 'red';
+    }
         
     return (
         <div className="cart__product-add-note">

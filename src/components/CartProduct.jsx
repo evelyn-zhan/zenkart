@@ -19,7 +19,7 @@ function CartProduct({ id, price, title, description, images, discount_percentag
                     checked={checked}
                     onChange={onCheckHandler}
                 />
-                <img src={images} alt="product-image" className="cart__product-image" />
+                <img src={images} alt="product" className="cart__product-image" />
                 <div className="cart__product-all-info">
                     <div className="cart__product-info">
                         <span className="cart__product-title">{title}</span>
