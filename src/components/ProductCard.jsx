@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProductCard({ id, price, title, description, images, discount_percentage, inCart, liked, onLike, onAddToCart }) {
+function ProductCard({ id, price, title, description, images, shop, discount_percentage, inCart, liked, onLike, onAddToCart }) {
     const onAddToCartHandler = () => {
         onAddToCart(id);
     };
@@ -23,6 +23,7 @@ function ProductCard({ id, price, title, description, images, discount_percentag
                 <div className="product-card__info">
                     <span className="product-card__title">{title}</span>
                     <span className="product-card__description">{description}</span>
+                    <span className="product-card__shop-name"><small><b>{shop.name}</b></small></span>
                 </div>
                 <div className="product-card__price">
                     <i className="ri-price-tag-3-line"></i>

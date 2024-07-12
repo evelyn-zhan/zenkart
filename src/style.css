@@ -163,7 +163,7 @@
 
 .product-card__info {
     width: 172px;
-    height: 115px;
+    height: 140px;
 
     display: flex;
     flex-flow: column nowrap;
