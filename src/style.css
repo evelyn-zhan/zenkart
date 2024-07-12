@@ -548,6 +548,12 @@
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--light-grey);
+
+    transition: .3s;
+}
+
+.cart__product-buttons i:hover {
+    color: black;
 }
 
 .cart__product-buttons i {

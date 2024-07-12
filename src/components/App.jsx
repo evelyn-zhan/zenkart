@@ -63,6 +63,7 @@ function App() {
                     ...product,
                     inCart: false,
                     quantity: 0,
+                    checked: false,
                     note: ''
                 }
             }
@@ -79,6 +80,7 @@ function App() {
                     ...product,
                     inCart: false,
                     quantity: 0,
+                    checked: false,
                     note: ''
                 }
             }
@@ -95,6 +97,7 @@ function App() {
                     ...product,
                     inCart: false,
                     quantity: 0,
+                    checked: false,
                     note: ''
                 }
             }
